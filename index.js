@@ -73,8 +73,8 @@ app.get('/shipping-cost', (req, res) => {
 // Endpoint 6: Given purchaseAmount as query parameter, return the loyalty points earned.
 app.get('/loyalty-points', (req, res) => {
   let purchaseAmt = parseFloat(req.query.purchaseAmount);
-
-  let loyaltyPoints = purchaseAmt * loyaltyRate;
+  let loyaltyPoints = 0; 
+  loyaltyPoints = purchaseAmt * loyaltyRate;
   res.send(loyaltyPoints.toString());
 });
 
